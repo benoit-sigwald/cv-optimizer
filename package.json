@@ -1,0 +1,13 @@
+{
+  "name": "cv-optimizer",
+  "version": "1.0.0",
+  "description": "Claude Code project that tailors a master CV to a job spec: ATS keyword analysis, company research, gap analysis, pixel-faithful DOCX generation.",
+  "type": "module",
+  "scripts": {
+    "generate": "node scripts/generate-cv.mjs"
+  },
+  "dependencies": {
+    "docx": "^9.0.2"
+  },
+  "license": "MIT"
+}

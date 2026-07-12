@@ -1,0 +1,11 @@
+# Personal data — NEVER commit (public repo)
+assets/
+output/
+data/*.local.json
+.env
+
+node_modules/
+*.docx
+*.pdf
+*.png
+*.jpg

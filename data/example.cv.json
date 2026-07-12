@@ -1,0 +1,50 @@
+{
+  "identity": {
+    "name": "Jane DOE",
+    "title": "SENIOR EXAMPLE ARCHITECT | PROGRAM DIRECTOR",
+    "location": "Example City, France",
+    "phone": "+33 6 00 00 00 00",
+    "email": "jane.doe@example.com",
+    "languages": "French • English",
+    "availability": "1 month",
+    "age": "40 years old"
+  },
+  "summary": "One-paragraph pitch: 15 years across industries, quantified flagship result, core expertise keywords, languages, availability.",
+  "key_skills": [
+    {"title": "Skill Domain 1", "content": "Keyword • Keyword • Keyword"},
+    {"title": "Skill Domain 2", "content": "Keyword • Keyword • Keyword"},
+    {"title": "Skill Domain 3", "content": "Keyword • Keyword • Keyword"},
+    {"title": "Skill Domain 4", "content": "Keyword • Keyword • Keyword"},
+    {"title": "Skill Domain 5", "content": "Keyword • Keyword • Keyword"},
+    {"title": "Skill Domain 6", "content": "Keyword • Keyword • Keyword"}
+  ],
+  "recent_ai_projects": [
+    {"company": "Client A", "description": "What was built, stack, quantified result."},
+    {"company": "Client B", "description": "What was built, stack, quantified result."}
+  ],
+  "career": [
+    {
+      "company": "Current Employer",
+      "dates": "Jan. 2020 – Present",
+      "location": "City, Country",
+      "role": "Role Title",
+      "bullets": [
+        "Achievement with quantified metric.",
+        "Achievement with quantified metric."
+      ]
+    },
+    {
+      "company": "Previous Employer",
+      "dates": "2010 – 2020",
+      "location": "City, Country",
+      "role": "Role Title",
+      "bullets": ["Achievement with quantified metric."]
+    }
+  ],
+  "formation": [
+    {"label": "Academic", "content": "Degree — School (Year)"},
+    {"label": "Certifs", "content": "Cert 1 • Cert 2 • Cert 3"},
+    {"label": "Data & tech", "content": "Tech 1 • Tech 2 • Tech 3"},
+    {"label": "Personal", "content": "Interest 1 | Interest 2"}
+  ]
+}
