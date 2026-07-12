@@ -23,6 +23,7 @@ job spec ──▶ /analyze-offer ──▶ keywords, hard gates, language, comp
 
 | Skill | What it does |
 |---|---|
+| `/apply` | **Full pipeline** — runs the four skills below in sequence from a single pasted job spec; only stops if a blocking hard gate is detected |
 | `/analyze-offer` | Extracts ATS keywords, hard gates (certifications, clearances), detects language, researches the company, recommends positioning |
 | `/tailor-cv` | Maps master CV + skills bank against requirements, rewrites bullets with quantified metrics, generates DOCX via `docx` npm |
 | `/cover-letter` | Writes a challenging, no-clichés cover letter in the job spec's language |

@@ -18,6 +18,8 @@ Accès : via le MCP Supabase connecté au compte Claude. Toujours lire `cv_const
 
 ## Workflow type
 
+**Raccourci : `/apply`** enchaîne les 4 étapes ci-dessous en une commande (seul arrêt volontaire : hard gate bloquant). Les skills individuels servent ensuite à itérer finement.
+
 1. `/analyze-offer` — coller l'offre → keywords ATS, hard gates, langue, analyse entreprise → ligne dans `cv_applications`
 2. `/tailor-cv` — gap analysis contre `cv_master` + `cv_skills_bank` → contenu tailored → `npm run generate` → DOCX
 3. `/cover-letter` — lettre dans la langue de l'offre, accroche provocante
