@@ -14,7 +14,7 @@ description: Rédige la lettre de motivation d'une candidature analysée — acc
    - Traitement honnête d'un hard gate si gap (ex. certification en cours) — le retourner en force si possible
    - Chute courte orientée action (proposition de conversation, pas de supplique)
 3. **Itérer** avec l'utilisateur : il préfère corriger des sections précises plutôt que des réécritures complètes.
-4. **Enregistrer** le texte final dans `cv_applications.cover_letter`.
+4. **Enregistrer** le texte final dans `cv_applications.cover_letter`, et déposer une copie (`.md` ou DOCX) dans le **dossier entreprise** (le même que celui du CV — le réutiliser, jamais en créer un doublon).
 5. Sur demande, produire le DOCX (police Calibri, sobre, même en-tête de coordonnées que le CV).
 
 ## Registre

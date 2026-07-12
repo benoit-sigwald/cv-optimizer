@@ -43,7 +43,11 @@ npm run generate -- --data data/tailored.local.json --photo assets/photo.jpg --o
 
 Le JSON d'entrée suit le schéma de `cv_master.content` (voir `data/example.cv.json`). Conversion PDF locale : `& "C:\Program Files\LibreOffice\program\soffice.exe" --headless --convert-to pdf --outdir output <docx>`. Validation 1 page : rendu image via PyMuPDF (`fitz`), jamais pdfinfo.
 
-Après génération, **copier le DOCX/PDF final vers `G:\My Drive\CV\output`** : ce dossier est synchronisé Google Drive (ouvrable dans Google Docs). Conversion en Google Doc natif possible via le connecteur Google Drive (copie avec conversion).
+## Rangement des livrables — un dossier par entreprise
+
+Tous les livrables d'une candidature (CV DOCX + PDF, lettre) vont dans `<racine de sortie>/<Entreprise>/`. La racine de sortie est définie par le CLAUDE.md du poste de travail (chez Benoît : `G:\My Drive\CV`, synchronisé Google Drive — ouvrable dans Google Docs).
+
+Règle stricte : **avant toute création, lister les dossiers existants** et chercher une correspondance (insensible à la casse, aux espaces, aux variantes — « Capgemini » ↔ « Cap Gemini »). S'il existe, le réutiliser ; ne JAMAIS créer de doublon.
 
 ## Setup nouvelle machine
 
