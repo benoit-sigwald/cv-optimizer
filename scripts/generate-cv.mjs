@@ -67,7 +67,7 @@ if (args.photo && fs.existsSync(args.photo)) {
   anchorChildren.push(new ImageRun({
     type: path.extname(args.photo).replace(".", "") === "png" ? "png" : "jpg",
     data: fs.readFileSync(args.photo),
-    transformation: { width: 56, height: 67 }, // 42 x 50 pt — compact, inset in the slim header
+    transformation: { width: 58, height: 69 }, // 43.5 x 51.8 pt — same height as the slim blue bar
     floating: {
       horizontalPosition: { relative: HorizontalPositionRelativeFrom.COLUMN, offset: 5934075 },
       verticalPosition: { relative: VerticalPositionRelativeFrom.PARAGRAPH, offset: 180975 },
@@ -100,21 +100,24 @@ if (titleWidth(titleSize) > TITLE_WIDTH_PT) {
   console.warn(`WARN: header title is ${cv.identity.title.length} chars and will wrap to 2 lines even at 8pt — shorten it (aim <= 55 chars).`);
 }
 const headerLeft = [
-  new Paragraph({ children: [run(cv.identity.name, { bold: true, size: 40, color: "FFFFFF" })], spacing: { after: 40 } }),
-  new Paragraph({ children: [run(cv.identity.title, { size: titleSize, color: "FFFFFF" })], spacing: { after: 40 } }),
+  new Paragraph({ children: [run(cv.identity.name, { bold: true, size: 32, color: "FFFFFF" })], spacing: { after: 20 } }),
+  new Paragraph({ children: [run(cv.identity.title, { size: titleSize, color: "FFFFFF" })], spacing: { after: 20 } }),
   new Paragraph({
     children: [run(`${cv.identity.location} · ${cv.identity.phone} · ${cv.identity.email}`, { size: 16, color: PALE })],
   }),
+  ...(cv.identity.github
+    ? [new Paragraph({ children: [run(cv.identity.github, { size: 16, color: PALE })] })]
+    : []),
 ];
 const headerMid = [
-  new Paragraph({ children: [run(L.languages, { bold: true, size: 19, color: "FFFFFF" })], spacing: { after: 20 } }),
-  new Paragraph({ children: [run(cv.identity.languages, { size: 17, color: PALE })], spacing: { after: 30 } }),
+  new Paragraph({ children: [run(L.languages, { bold: true, size: 18, color: "FFFFFF" })], spacing: { after: 20 } }),
+  new Paragraph({ children: [run(cv.identity.languages, { size: 16, color: PALE })], spacing: { after: 20 } }),
   new Paragraph({
-    children: [run(`${L.availability} `, { bold: true, size: 19, color: "FFFFFF" }), run(cv.identity.availability, { size: 17, color: PALE })],
+    children: [run(`${L.availability} `, { bold: true, size: 18, color: "FFFFFF" }), run(cv.identity.availability, { size: 16, color: PALE })],
     spacing: { after: 20 },
   }),
   new Paragraph({
-    children: [run(`${L.age} `, { bold: true, size: 19, color: "FFFFFF" }), run(cv.identity.age, { size: 17, color: PALE })],
+    children: [run(`${L.age} `, { bold: true, size: 18, color: "FFFFFF" }), run(cv.identity.age, { size: 16, color: PALE })],
     spacing: { after: 0 },
   }),
 ];
@@ -126,8 +129,8 @@ const header = new Table({
   rows: [new TableRow({
     height: { value: 1000, rule: "atLeast" },
     children: [
-      headerCell(headerLeft, { top: 80, bottom: 80, left: 360, right: 200 }),
-      headerCell(headerMid, { top: 80, bottom: 80, left: 200, right: 200 }),
+      headerCell(headerLeft, { top: 20, bottom: 20, left: 360, right: 200 }),
+      headerCell(headerMid, { top: 20, bottom: 20, left: 200, right: 200 }),
     ],
   })],
 });

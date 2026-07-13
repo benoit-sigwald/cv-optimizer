@@ -5,6 +5,7 @@
     "location": "Example City, France",
     "phone": "+33 6 00 00 00 00",
     "email": "jane.doe@example.com",
+    "github": "github.com/janedoe (optionnel — affiché sous la ligne contact)",
     "languages": "French • English",
     "availability": "1 month",
     "age": "40 years old"

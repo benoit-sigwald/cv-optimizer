@@ -22,7 +22,7 @@ description: Score ATS d'un CV contre une offre analysée, avant/après tailorin
    - **Défendabilité** : quelles faiblesses un candidat concurrent ou un recruteur sceptique exploiterait-il en premier (gaps techniques, âge, salaire, sur-calibrage…) — et le dossier les désamorce-t-il ?
    - **Scalabilité du récit** : le positionnement tient-il en entretien face au panel probable (company_analysis) ?
    - Conclure sur les 2-3 zones stratégiques les plus faibles et comment les renforcer.
-7. **Enregistrer** `ats_score_before` / `ats_score_after` dans `cv_applications`, et l'audit dans cv_notes.
+7. **Enregistrer** `ats_score_before` / `ats_score_after` dans `cv_applications`, l'audit dans cv_notes, **et compléter le fichier d'analyse du dossier entreprise** `<YYYY.MM> <Entreprise> <Poste> analyse.md` : scores avant/après, verdict du re-screening, audit stratégique (markdown condensé).
 
 ## Honnêteté
 
