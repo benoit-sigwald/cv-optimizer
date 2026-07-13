@@ -7,17 +7,19 @@ description: Pipeline complet de candidature — enchaîne analyze-offer → tai
 
 Enchaîner les 4 skills dans l'ordre, sans s'arrêter entre les étapes sauf blocage réel :
 
-1. **`/analyze-offer`** — analyse de l'offre, recherche entreprise, ligne `cv_applications` créée.
+1. **`/analyze-offer`** — analyse de l'offre, recherche entreprise, **benchmark salarial** (lieu × industrie × maturité de la boîte × profil), ligne `cv_applications` créée, job spec archivée en `<YYYY.MM> <Entreprise> <Poste> job-spec.md` dans le dossier entreprise.
    - ⚠️ Si un **hard gate bloquant** est détecté (certification exigée absente, habilitation…), le signaler immédiatement et demander si on continue — c'est le seul point d'arrêt volontaire du pipeline.
-2. **`/tailor-cv`** — gap analysis, réécriture, génération DOCX, validation 1 page. Les livrables vont dans le **dossier entreprise** (réutilisé s'il existe, créé sinon — jamais de doublon).
+2. **`/tailor-cv`** — **screening recruteur** (pourquoi ce CV serait ignoré, en 6 secondes), gap analysis, réécriture orientée résultats mesurables et langage exécutif, génération et validation 1 page **en local**. Les livrables vont dans le **dossier entreprise** (réutilisé s'il existe, créé sinon — jamais de doublon) et portent le **titre du poste** dans leur nom.
 3. **`/cover-letter`** — lettre dans la langue de l'offre, enregistrée dans `cv_applications` et déposée dans le dossier entreprise.
-4. **`/ats-score`** — score avant/après, mapping keywords, scores enregistrés.
+4. **`/ats-score`** — score avant/après, mapping keywords, **re-screening recruteur** du CV final, **audit stratégique de la candidature** (positionnement concurrentiel, proposition de valeur, défendabilité), scores enregistrés.
 
 ## Sortie finale (une seule synthèse)
 
-- Chemin du dossier entreprise avec CV DOCX + PDF + lettre
+- Chemin du dossier entreprise avec CV DOCX + PDF + lettre + job spec
 - Lettre de motivation (texte intégral)
 - Score ATS avant → après avec le delta
+- Verdict du screening recruteur + zones faibles de l'audit stratégique
+- Fourchette salariale estimée
 - Hard gates et gaps signalés honnêtement
 - Recommandations restantes (3 max)
 

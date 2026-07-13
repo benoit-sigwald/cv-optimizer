@@ -9,3 +9,4 @@ node_modules/
 *.pdf
 *.png
 *.jpg
+data/archive/
