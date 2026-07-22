@@ -1,0 +1,3 @@
+[submodule "candidatures"]
+	path = candidatures
+	url = https://github.com/benoit-sigwald/cv-candidatures.git
