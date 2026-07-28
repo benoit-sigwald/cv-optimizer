@@ -2,9 +2,11 @@
 
 Industrialise la méthodologie de candidature de Benoît Sigwald : analyse d'offre → recherche entreprise → gap analysis → CV tailored + lettre de motivation → scoring ATS avant/après.
 
-## Données (source de vérité : Supabase, projet "Einstein", id `eabuptcfoenqrvjlkmfk`)
+## Données (source de vérité : PostgreSQL sur OCI, schéma `cv`)
 
-Le repo est **public** : aucune donnée personnelle (CV, photo, téléphone, historique de candidatures) ne doit JAMAIS être commitée. Tout vit dans Supabase, tables préfixées `cv_` :
+**Migré de Supabase → OCI (juillet 2026).** Accès **PostgREST** (même syntaxe que Supabase) : `https://arx-mcp.duckdns.org/db-cv/rest/v1/<table>`, header `Authorization: Bearer <service key>` (serveur `/root/.pgrst_service_key`). ⚠️ L'ancien MCP Supabase (`eabuptcfoenqrvjlkmfk`) est **décommissionné** (« Not Found »). Détails migration : `G:\My Drive\OCI Migration\`.
+
+Le repo est **public** : aucune donnée personnelle (CV, photo, téléphone, historique de candidatures) ne doit JAMAIS être commitée. Tout vit dans la base OCI, tables préfixées `cv_` :
 
 | Table | Contenu |
 |---|---|
@@ -14,7 +16,7 @@ Le repo est **public** : aucune donnée personnelle (CV, photo, téléphone, his
 | `cv_constraints` | Règles reportées de session en session — **les lire au début de chaque candidature** |
 | `cv_assets` | Métadonnées des assets (la photo elle-même est locale : `assets/photo.jpg`, gitignorée) |
 
-Accès : via le MCP Supabase connecté au compte Claude. Toujours lire `cv_constraints` (where `active = true`) avant toute génération.
+Accès : PostgREST OCI (`db-cv`) avec la service key. Toujours lire `cv_constraints` (where `active = true`) avant toute génération : `GET https://arx-mcp.duckdns.org/db-cv/rest/v1/cv_constraints?active=eq.true&select=rule,scope`.
 
 ## Workflow type
 
