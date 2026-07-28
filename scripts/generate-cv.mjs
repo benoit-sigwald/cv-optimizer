@@ -103,11 +103,8 @@ const headerLeft = [
   new Paragraph({ children: [run(cv.identity.name, { bold: true, size: 32, color: "FFFFFF" })], spacing: { after: 20 } }),
   new Paragraph({ children: [run(cv.identity.title, { size: titleSize, color: "FFFFFF" })], spacing: { after: 20 } }),
   new Paragraph({
-    children: [run(`${cv.identity.location} · ${cv.identity.phone} · ${cv.identity.email}`, { size: 16, color: PALE })],
+    children: [run(`${cv.identity.location} · ${cv.identity.phone} · ${cv.identity.email}${cv.identity.github ? " · " + cv.identity.github : ""}`, { size: 16, color: PALE })],
   }),
-  ...(cv.identity.github
-    ? [new Paragraph({ children: [run(cv.identity.github, { size: 16, color: PALE })] })]
-    : []),
 ];
 const headerMid = [
   new Paragraph({ children: [run(L.languages, { bold: true, size: 18, color: "FFFFFF" })], spacing: { after: 20 } }),
