@@ -178,7 +178,7 @@ const skillsGrid = new Table({
 const projects = (cv.recent_ai_projects ?? []).map((p) =>
   new Paragraph({
     spacing: { before: 0, after: 90 },
-    children: [run(`${p.company} — `, { bold: true, size: 20, color: BLUE }), run(p.description, { size: 20, color: "000000" })],
+    children: [run(`${p.company}: `, { bold: true, size: 20, color: BLUE }), run(p.description, { size: 20, color: "000000" })],
   })
 );
 
