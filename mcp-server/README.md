@@ -35,7 +35,7 @@ when a page overflows.
 - Node 20+
 - LibreOffice, for DOCX to PDF. `winget install --id TheDocumentFoundation.LibreOffice -e`
 - Python with PyMuPDF, for page measurement. `pip install pymupdf`
-- `CV_ROOT/.env` holding `SUPABASE_URL` and `SUPABASE_SERVICE_ROLE_KEY` for the tracking tools
+- `CV_ROOT/.env` holding `CV_DB_URL` and `CV_DB_KEY` for the tracking tools
 
 Only the tracking tools need credentials, and only `cv_build`, `letter_build` need
 LibreOffice. `pipeline_health` reports what is missing.
@@ -43,7 +43,10 @@ LibreOffice. `pipeline_health` reports what is missing.
 The service key is read from the environment or `CV_ROOT/.env` and never appears in a tool
 argument or a tool result. The `.env` file wins over the ambient environment on purpose: a
 stale `SUPABASE_URL` pointing at the decommissioned Supabase project still lingers in some
-shells on this machine.
+shells on this machine, and it would otherwise shadow the real endpoint.
+
+The legacy names `SUPABASE_URL` and `SUPABASE_SERVICE_ROLE_KEY` still resolve as a fallback,
+so anything deployed with them keeps working until its configuration is renamed.
 
 ## Install
 

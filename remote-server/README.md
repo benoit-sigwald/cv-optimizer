@@ -46,8 +46,8 @@ token.
 
 | Variable | Required | Notes |
 |---|---|---|
-| `SUPABASE_URL` | yes | PostgREST base, e.g. `https://arx-mcp.duckdns.org/db-cv` |
-| `SUPABASE_SERVICE_ROLE_KEY` | yes | Never committed; injected by the orchestrator |
+| `CV_DB_URL` | yes | PostgREST base, e.g. `https://arx-mcp.duckdns.org/db-cv` |
+| `CV_DB_KEY` | yes | Never committed; injected by the orchestrator |
 | `CV_MCP_TOKEN` | yes | Bearer token callers must present. Without it the server runs open and says so on startup. |
 | `PUBLIC_URL` | yes | External base, e.g. `https://arx-mcp.duckdns.org/cv`. Download links are built from it, so a mismatch produces links that 404. |
 | `PORT` | no | Default 8080 |

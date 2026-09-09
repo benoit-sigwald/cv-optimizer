@@ -6,7 +6,7 @@ function base() {
   if (!url || !key) {
     fail(
       "No PostgREST credentials are available, so application tracking is unavailable.",
-      "Set SUPABASE_URL and SUPABASE_SERVICE_ROLE_KEY in the environment, or place them in " +
+      "Set CV_DB_URL and CV_DB_KEY in the environment, or place them in " +
         "<CV_ROOT>/.env. Generation, validation and scoring tools work without them."
     );
   }
@@ -29,7 +29,7 @@ async function call(path, init = {}) {
     fail(
       `PostgREST returned ${res.status}: ${text.slice(0, 300)}`,
       res.status === 401 || res.status === 403
-        ? "The service key is rejected. Check SUPABASE_SERVICE_ROLE_KEY."
+        ? "The service key is rejected. Check CV_DB_KEY."
         : "Check the column names against the cv_applications schema."
     );
   }
