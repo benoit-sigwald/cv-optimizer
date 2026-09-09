@@ -29,9 +29,12 @@ COPY remote-server/package.json remote-server/package-lock.json ./remote-server/
 RUN cd remote-server && npm ci --omit=dev
 
 COPY scripts ./scripts
-COPY assets ./assets
 COPY mcp-server/lib ./mcp-server/lib
 COPY remote-server ./remote-server
+
+# assets/ is gitignored in this public repository, so a build from git has no portrait.
+# The server writes it here at startup from the cv_assets row instead.
+RUN mkdir -p /app/assets
 
 ENV NODE_ENV=production \
     PORT=8080 \

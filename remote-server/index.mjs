@@ -24,6 +24,7 @@ import {
   patchApplication,
 } from "../mcp-server/lib/db.mjs";
 import { DATA_DIR, locate, newBundle, publish, sweep } from "./lib/store.mjs";
+import { ensurePhoto } from "./lib/photo.mjs";
 
 const PORT = Number(process.env.PORT || 8080);
 const TOKEN = process.env.CV_MCP_TOKEN || "";
@@ -297,7 +298,12 @@ const http = createServer(async (req, res) => {
 
 setInterval(() => sweep(), 6 * 3600 * 1000).unref();
 
+// The portrait is not in the public repository, so materialise it before serving.
+// A missing photo degrades the CV rather than breaking it, so this never blocks startup.
+const photo = await ensurePhoto();
+
 http.listen(PORT, () => {
   const auth = TOKEN ? "bearer token required" : "OPEN, set CV_MCP_TOKEN";
   console.log(`cv-remote MCP on :${PORT} (${auth}), documents in ${DATA_DIR}`);
+  console.log(`portrait: ${photo.source}${photo.error ? ` — ${photo.error}` : ` (${photo.path})`}`);
 });

@@ -68,3 +68,6 @@ export const setMaster = (id, content, version) =>
     headers: { Prefer: "return=representation" },
     body: JSON.stringify(version ? { content, version } : { content }),
   });
+
+export const getAsset = (name) =>
+  call(`/cv_assets?select=name,mime_type,data_base64&name=eq.${encodeURIComponent(name)}&limit=1`);

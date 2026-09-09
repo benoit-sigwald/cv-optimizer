@@ -106,6 +106,20 @@ Nineteen checks: real HTTP MCP session, a rendered one-page CV, a PDF downloaded
 verified by magic number, unauthenticated access refused, path traversal refused, and the
 database reached.
 
+## The portrait
+
+`assets/` is gitignored in this public repository, so an image built from git has no photo.
+The portrait lives in the `cv_assets` table and the server writes it to `assets/photo.jpg`
+at startup, logging where it came from. A missing photo degrades the CV rather than breaking
+it, so startup never blocks on it.
+
+To change the portrait, update the `cv_assets` row and restart:
+
+```bash
+python -c "import base64,json;print(json.dumps({'data_base64':base64.b64encode(open('photo.jpg','rb').read()).decode()}))" > asset.json
+curl -X PATCH "$CV_DB_URL/rest/v1/cv_assets?name=eq.photo"   -H "apikey: $CV_DB_KEY" -H "Authorization: Bearer $CV_DB_KEY"   -H "Content-Type: application/json" -d @asset.json
+```
+
 ## Font fidelity
 
 The CV template uses Calibri. The image installs `fonts-crosextra-carlito`, which is
