@@ -1,0 +1,12 @@
+node_modules
+*/node_modules
+.git
+.github
+candidatures
+output
+out_local
+data
+supabase
+.claude
+*.md
+!README.md

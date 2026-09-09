@@ -16,14 +16,18 @@ function tokens(text) {
 }
 
 // Single words plus adjacent pairs, ranked by frequency in the spec.
+// Thresholds scale with length: a 200-word advert repeats nothing three times,
+// so a fixed cut-off returns almost no keywords for exactly the specs people paste.
 export function extractKeywords(jobSpec, limit = 45) {
   const t = tokens(jobSpec);
+  const wordMin = t.length >= 600 ? 3 : t.length >= 250 ? 2 : 1;
+  const pairMin = t.length >= 600 ? 4 : 2;
   const freq = new Map();
   const bump = (k, w = 1) => freq.set(k, (freq.get(k) || 0) + w);
   t.forEach((w) => bump(w));
   for (let i = 0; i < t.length - 1; i++) bump(`${t[i]} ${t[i + 1]}`, 2);
   return [...freq.entries()]
-    .filter(([k, n]) => (k.includes(" ") ? n >= 4 : n >= 2))
+    .filter(([k, n]) => (k.includes(" ") ? n >= pairMin : n >= wordMin))
     .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]))
     .slice(0, limit)
     .map(([k]) => k);

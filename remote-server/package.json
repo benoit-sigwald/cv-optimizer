@@ -1,0 +1,12 @@
+{
+  "name": "cv-remote-mcp",
+  "version": "1.0.0",
+  "description": "Remote HTTP MCP server for the cv-optimizer pipeline: tailor a CV to a job spec, build DOCX and PDF, return download links.",
+  "type": "module",
+  "scripts": { "start": "node index.mjs", "test": "node test/smoke.mjs" },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.30.0",
+    "zod": "^3.25.0"
+  },
+  "license": "MIT"
+}

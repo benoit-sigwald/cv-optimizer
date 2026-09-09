@@ -69,10 +69,29 @@ out = {
 print(json.dumps(out))
 `;
 
+// Windows ships `python`, Debian ships `python3`. Probe once, remember the winner.
+let pythonBin = null;
+async function python() {
+  if (pythonBin) return pythonBin;
+  for (const bin of [process.env.PYTHON_BIN, "python3", "python"].filter(Boolean)) {
+    try {
+      await run(bin, ["-c", "import pymupdf"], { timeout: 30000 });
+      pythonBin = bin;
+      return bin;
+    } catch {
+      // try the next candidate
+    }
+  }
+  fail(
+    "No Python with PyMuPDF was found, so page validation is unavailable.",
+    "Install it with `pip install pymupdf`, or set PYTHON_BIN to an interpreter that has it."
+  );
+}
+
 export async function inspectPdf(pdfPath) {
   let stdout;
   try {
-    ({ stdout } = await run("python", ["-c", PY_INSPECT, pdfPath], { timeout: 60000 }));
+    ({ stdout } = await run(await python(), ["-c", PY_INSPECT, pdfPath], { timeout: 60000 }));
   } catch (e) {
     fail(
       `Could not inspect ${basename(pdfPath)} with PyMuPDF: ${e.message}`,
