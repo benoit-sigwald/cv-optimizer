@@ -1,0 +1,12 @@
+{
+  "name": "cv-pipeline-mcp",
+  "version": "1.0.0",
+  "description": "MCP server exposing the cv-optimizer pipeline: CV and letter generation, one-page PDF validation, ATS scoring, application tracking, dossier filing.",
+  "type": "module",
+  "bin": { "cv-pipeline-mcp": "index.mjs" },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.20.0",
+    "zod": "^3.25.0"
+  },
+  "license": "MIT"
+}

@@ -1,0 +1,116 @@
+{
+  "headings": {
+    "skills": "Ce que je fais",
+    "projects": "Des livraisons en production, pas des slides",
+    "career": "Parcours",
+    "formation": "Formation & certifications"
+  },
+  "labels": {
+    "languages": "LANGUES",
+    "availability": "Disponibilité",
+    "age": "Âge"
+  },
+  "identity": {
+    "age": "55 ans",
+    "name": "Benoît SIGWALD",
+    "email": "benoit.p.g.sigwald@gmail.com",
+    "phone": "+33 6 13 70 53 21",
+    "title": "RESPONSABLE ENABLEMENT IA | ARCHITECTE IA SENIOR",
+    "github": "github.com/benoit-sigwald",
+    "location": "Mougins, France",
+    "languages": "Français • Anglais • Néerlandais",
+    "availability": "1 mois"
+  },
+  "summary": "Architecte IA senior et conseil de direction. Je fais en sorte que vos équipes construisent avec l'IA générative, du premier cadrage jusqu'à la production gouvernée. Quinze ans de Field CTO chez Oracle (65 M€ de revenus annuels en EMEA, fondateur de l'Innovation Lab), sur trente ans d'informatique d'entreprise. Depuis 2020, delivery hands-on pour EDF, CMA CGM et Crédit Agricole : systèmes multi-agents et RAG gouverné, avec 60 % de temps d'analyse en moins en comité exécutif et un time to market raccourci de 30 %. Gouvernance AI Act, RGPD, ISO 42001 et hébergement souverain traités comme ce qui débloque les clients régulés.",
+  "key_skills": [
+    {
+      "title": "Enablement & adoption IA",
+      "content": "Champions internes • Playbooks • Formation terrain • KPI d'adoption"
+    },
+    {
+      "title": "GenAI, RAG & agents",
+      "content": "LLM • RAG multi-source • Multi-agent • LangGraph • CrewAI • Claude"
+    },
+    {
+      "title": "Du POC à la production",
+      "content": "LLMOps • Évaluation • Observabilité • Maîtrise des coûts • DevSecOps"
+    },
+    {
+      "title": "Direction IA à temps partagé",
+      "content": "Feuilles de route • Priorisation • Business cases • Conseil COMEX"
+    },
+    {
+      "title": "Cloud & hébergement souverain",
+      "content": "OCI • AWS • Azure • GCP • Kubernetes • Terraform • Hébergé en France"
+    },
+    {
+      "title": "IA responsable",
+      "content": "EU AI Act • RGPD • ISO 42001 • Sécurité • Souveraineté des données"
+    }
+  ],
+  "recent_ai_projects": [
+    {
+      "company": "Crédit Agricole",
+      "description": "Plateforme multi-agent d'intelligence économique cadrée puis industrialisée : RAG multi-source avec attribution des sources, LLMOps, évaluation. Stack LangGraph, CrewAI, Claude. Temps d'analyse du comité exécutif réduit de 60 %."
+    },
+    {
+      "company": "CMA CGM",
+      "description": "Trajectoire IA devenue un écosystème multi-agent en production pour l'orchestration SaaS et logistique. Stack LangGraph, AWS Bedrock, Kubernetes, Terraform. Time to market raccourci de 30 %."
+    },
+    {
+      "company": "Innovat Property",
+      "description": "Agent multimodal d'analyse d'investissement avec sources citées, prototypé en assisted coding puis fiabilisé. Stack LangGraph, Vertex AI. Adopté par un fonds suisse, 4 jours ETP gagnés par étude."
+    }
+  ],
+  "career": [
+    {
+      "role": "Fondateur & Director | Responsable Enablement IA",
+      "dates": "Déc. 2020 – aujourd'hui",
+      "bullets": [
+        "Conseil IA auprès de DSI et de directions générales (EDF, CMA CGM, Crédit Agricole) : identification et priorisation des cas d'usage, business cases chiffrés, feuilles de route, gouvernance AI Act et ISO 42001 en facilitateur de décision.",
+        "Delivery et transmission : RAG gouverné, orchestration multi-agent, LLMOps et évaluation, avec architectures de référence, playbooks et formation terrain pour que les équipes continuent seules.",
+        "Missions de direction IA à temps partagé et infrastructure IA privée souveraine hébergée en France. Résultats : marge opérationnelle en hausse de 15 %, temps d'analyse COMEX réduit de 60 %, time to market raccourci de 30 %."
+      ],
+      "company": "Arx Consulting",
+      "location": "Mougins, France"
+    },
+    {
+      "role": "Global Client Advisor & fondateur de l'Innovation Lab",
+      "dates": "Juil. 2005 – déc. 2020",
+      "bullets": [
+        "Conseil grands comptes (Deutsche Telekom, Virgin Media, British Telecom, Société Générale), 65 M€ de revenus annuels, top 10 % mondial. Migrations cloud représentant 120 M€ d'économies. Avant-vente, soutenances et propositions commerciales.",
+        "Fondation de l'Innovation Lab Oracle sur l'EMEA, les Amériques et l'Asie, le lieu où les nouvelles pratiques d'ingénierie étaient éprouvées puis diffusées. Écosystème d'intégrateurs (Capgemini, Accenture, Infosys, Wipro). Équipes jusqu'à 240 personnes."
+      ],
+      "company": "Oracle Corporation",
+      "location": "France & États-Unis"
+    },
+    {
+      "role": "Directeur, architecture d'entreprise & direction de programmes",
+      "dates": "Janv. 2000 – janv. 2005",
+      "bullets": [
+        "Premier déploiement VoIP Cisco sur 12 pays européens (programme de 65 M€, budget de 35 M€ piloté) ; refonte CRM, ERP et facturation sur 5 pays ; exploitation 24/7 ; équipe de 35 personnes."
+      ],
+      "company": "Liberty Global",
+      "location": "Amsterdam"
+    },
+    {
+      "role": "Développeur senior, systèmes temps réel critiques",
+      "dates": "1994 – 2000",
+      "bullets": [
+        "Plateforme mondiale de trading Forex en Java/CORBA (Chase Manhattan) ; première génération de banque en ligne grand public (ABN AMRO)."
+      ],
+      "company": "Chase Manhattan & ABN AMRO",
+      "location": "Londres & Amsterdam"
+    }
+  ],
+  "formation": [
+    {
+      "label": "Académique",
+      "content": "MSc IA pour le Business, Aivancity (2025) | Master 2 Business/IT/Data, ESCEM (1995) | Master en Droit, Paris 2 (1992)"
+    },
+    {
+      "label": "Certifications",
+      "content": "TOGAF • ITIL • Prince2 • Agile • Cloud Admin (OCI • AWS • Azure) • LangChain GenAI"
+    }
+  ]
+}
